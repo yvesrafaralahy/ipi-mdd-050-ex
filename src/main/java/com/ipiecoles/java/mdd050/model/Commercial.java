@@ -3,9 +3,13 @@ package com.ipiecoles.java.mdd050.model;
 import org.joda.time.LocalDate;
 
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 @Entity
 public class Commercial extends Employe {
+
+
+	private static final long serialVersionUID = 5415800951599717353L;
 
 	private Double caAnnuel = 0d;
 

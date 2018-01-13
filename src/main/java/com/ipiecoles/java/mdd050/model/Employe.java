@@ -1,14 +1,20 @@
 package com.ipiecoles.java.mdd050.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Employe {
+public abstract class Employe implements Serializable {
+
+
+	private static final long serialVersionUID = -633481376872387016L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

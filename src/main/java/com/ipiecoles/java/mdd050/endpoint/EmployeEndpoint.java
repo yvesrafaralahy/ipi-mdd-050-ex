@@ -3,8 +3,8 @@ package com.ipiecoles.java.mdd050.endpoint;
 import com.ipiecoles.java.mdd050.model.Employe;
 import com.ipiecoles.java.mdd050.service.EmployeService;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-import io.spring.guides.gs_producing_web_service.GetEmployeRequest;
-import io.spring.guides.gs_producing_web_service.GetEmployeResponse;
+//import io.spring.guides.gs_producing_web_service.GetEmployeRequest;
+//import io.spring.guides.gs_producing_web_service.GetEmployeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -16,10 +16,10 @@ import javax.xml.datatype.DatatypeFactory;
 import java.time.ZoneId;
 import java.util.GregorianCalendar;
 
-@Endpoint
+//@Endpoint
 public class EmployeEndpoint {
 
-    @Autowired
+    /*@Autowired
     private EmployeService employeService;
 
     private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
@@ -42,5 +42,5 @@ public class EmployeEndpoint {
         response.setEmploye(employe);
 
         return response;
-    }
+    }*/
 }
