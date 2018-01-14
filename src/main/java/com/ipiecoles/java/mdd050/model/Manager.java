@@ -1,8 +1,5 @@
 package com.ipiecoles.java.mdd050.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.ipiecoles.java.mdd050.exception.TechnicienException;
 import org.joda.time.LocalDate;
 
@@ -14,11 +11,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
-
 public class Manager extends Employe {
 
-	@JsonIgnoreProperties("manager")
 	@OneToMany(mappedBy = "manager")
 	private Set<Technicien> equipe = new HashSet<>();
 

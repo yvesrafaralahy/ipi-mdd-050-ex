@@ -1,6 +1,5 @@
 package com.ipiecoles.java.mdd050.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.ipiecoles.java.mdd050.exception.TechnicienException;
 import org.joda.time.LocalDate;
 
@@ -12,7 +11,6 @@ import java.util.Objects;
 public class Technicien extends Employe implements Comparable<Technicien> {
 
 
-	//@JsonBackReference
 	@ManyToOne
 	private Manager manager;
 
