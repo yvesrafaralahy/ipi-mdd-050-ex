@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Technicien extends Employe implements Comparable<Technicien> {
 
 
-	@JsonBackReference
+	//@JsonBackReference
 	@ManyToOne
 	private Manager manager;
 

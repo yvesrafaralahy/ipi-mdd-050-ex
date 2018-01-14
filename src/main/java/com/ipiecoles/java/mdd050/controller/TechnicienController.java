@@ -2,7 +2,10 @@ package com.ipiecoles.java.mdd050.controller;
 
 import com.ipiecoles.java.mdd050.exception.EmployeException;
 import com.ipiecoles.java.mdd050.model.Commercial;
+import com.ipiecoles.java.mdd050.model.Manager;
 import com.ipiecoles.java.mdd050.model.Technicien;
+import com.ipiecoles.java.mdd050.service.TechnicienService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,12 +15,9 @@ import javax.persistence.EntityNotFoundException;
 @RequestMapping("/techniciens")
 public class TechnicienController extends EmployeController {
 
-    /**
-     *
-     * @param id
-     * @param employe
-     * @return
-     */
+    @Autowired
+    private TechnicienService technicienService;
+
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public Technicien updateEmploye(@PathVariable(value = "id") Long id, @RequestBody Technicien employe) {
         try {
@@ -40,5 +40,11 @@ public class TechnicienController extends EmployeController {
         } catch (IllegalArgumentException e){
             throw new EntityNotFoundException("L'employé d'identifiant : " + id + " n'a pas été trouvé.");
         }
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{idTechnicien}/manager/{matricule}/add")
+    @ResponseStatus(value = HttpStatus.OK)
+    public Manager addManager(@PathVariable Long idTechnicien, @PathVariable String matricule) {
+        return this.technicienService.addManager(idTechnicien, matricule);
     }
 }

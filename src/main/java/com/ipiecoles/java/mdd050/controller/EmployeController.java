@@ -25,7 +25,7 @@ public class EmployeController {
     }
 
     @RequestMapping(value = "", produces = APPLICATION_JSON_CHARSET_UTF_8, method = RequestMethod.GET, params = "matricule")
-    public Employe findAll(@RequestParam("matricule") String matricule){
+    public Employe findByMatricule(@RequestParam("matricule") String matricule){
         return employeService.findMyMatricule(matricule);
     }
 
