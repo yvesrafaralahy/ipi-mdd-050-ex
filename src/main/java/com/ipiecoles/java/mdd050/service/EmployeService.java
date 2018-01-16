@@ -37,9 +37,6 @@ public class EmployeService {
     }
 
     public <T extends Employe> T updateEmploye(Long id, T employe) throws EmployeException {
-        if(!Objects.equals(id, employe.getId())){
-            throw new EmployeException(EmployeException.ID, employe, id);
-        }
         return employeRepository.save(employe);
     }
 
@@ -50,11 +47,7 @@ public class EmployeService {
     }
 
     public Employe findMyMatricule(String matricule) {
-        Employe employe = this.employeRepository.findByMatricule(matricule);
-        if(employe == null){
-            throw new EntityNotFoundException("Impossible de trouver l'employé de matricule " + matricule);
-        }
-        return employe;
+       return this.employeRepository.findByMatricule(matricule);
     }
 
 }

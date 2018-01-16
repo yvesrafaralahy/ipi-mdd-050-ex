@@ -23,9 +23,6 @@ public class CommercialService {
     }
 
     public Commercial updateEmploye(Long id, Commercial employe) throws EmployeException {
-        if(!Objects.equals(id, employe.getId())){
-            throw new EmployeException(EmployeException.ID, employe, id);
-        }
         return commercialRepository.save(employe);
     }
 
