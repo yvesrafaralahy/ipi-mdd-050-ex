@@ -46,7 +46,7 @@ public class ManagerService {
 
         if(t.getManager() != null){
             throw new IllegalArgumentException("Le technicien de matricule " + matricule + " a déjà un manager : " + t.getManager().getPrenom() + " " + t.getManager().getNom()
-                    + " (matricule " + t.getManager().getMatricule() + ")");
+            + " (matricule " + t.getManager().getMatricule() + ")");
         }
 
         m.getEquipe().add(t);

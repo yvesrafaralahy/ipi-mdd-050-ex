@@ -63,5 +63,4 @@ public class EmployeService {
     public Employe findMyMatricule(String matricule) {
        return this.employeRepository.findByMatricule(matricule);
     }
-
 }
